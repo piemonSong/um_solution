@@ -12,4 +12,10 @@
    * 球面墨卡托投影:  
    ![球面墨卡托投影](img/epsg3857.jpg "球面墨卡托投影")
    
-   Leaflet.js默认投影为球面墨卡托投影
+   Leaflet.js默认投影为球面墨卡托投影,修改投影:  
+   ```javascript
+    new L.Map('map', {center: new L.LatLng(30.5, 110.51),
+                                    zoom: 4,
+                                    crs: L.CRS.EPSG4326
+        });
+   ```
