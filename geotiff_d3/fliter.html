@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="map">
+
+    </div>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="./lib/geotiff.bundle.min.1.0.0@beta6.js"></script>
+
+    <script>
+        const [width,height] = [550,450]
+        var canvas = d3.select('#map').append("canvas")
+                .attr("width", width)
+                .attr("height", height);
+
+        var context = canvas.node().getContext("2d");
+        var projection = d3.geoMercator()
+            .center([122.7,45])
+            .scale(1000)
+            //.translate([width/2, height/2]);
+
+
+        d3.buffer("./data/Extract_TEM_21.tif").then(function (tiffData,err) {
+            console.log(tiffData,err)
+                d3.json('./data/province.json').then(function (d) {
+
+                  const f = d.features.filter(f => f.properties.CODE === 150000)
+                  var path = d3.geoPath()
+                      .projection(projection).context(context);
+                  d.features = f
+                  context.beginPath();
+                  context.strokeStyle = "#000";
+                  context.fillStyle = "#fff";
+                  path(d);
+                  context.fill();
+                  context.stroke();
+    
+                context.globalAlpha = "0.6";
+                (async function () {
+                   const tiff =  await GeoTIFF.fromArrayBuffer(tiffData)
+                    const image = await tiff.getImage();
+                    const data = await image.readRasters();
+                    const tiepoint = image.getTiePoints()[0];
+                    const pixelScale = image.getFileDirectory().ModelPixelScale;
+                   
+                    const geoTransform = [tiepoint.x, pixelScale[0], 0, tiepoint.y, 0, -1*pixelScale[1]];
+                    const invGeoTransform = [-geoTransform[0]/geoTransform[1], 1/geoTransform[1],0,-geoTransform[3]/geoTransform[5],0,1/geoTransform[5]];
+
+                      var tempData = new Array(image.getHeight());
+                      for (var j = 0; j<image.getHeight(); j++){
+                          tempData[j] = new Array(image.getWidth());
+                          for (var i = 0; i<image.getWidth(); i++){
+                              tempData[j][i] = data[0][i + j*image.getWidth()];
+                          }
+                      }
+
+      
+                  var canvasRaster = d3.select("#map").append("canvas")
+                      .attr("width", width)
+                      .attr("height", height)
+                      .style("display","none");
+
+                  var contextRaster = canvasRaster.node().getContext("2d");
+                  const [min,max] = [240,280]
+                  let range = 1/(max - min)
+                  var id = contextRaster.createImageData(width,height);
+                  console.log(contextRaster)
+                  var idata = id.data;
+                  var pos = 0;
+                  for(var j = 0; j<height; j++){
+                    for(var i = 0; i<width; i++){
+                      var pointCoords = projection.invert([i,j]);
+                      var px = Math.round( (  pointCoords[0] - geoTransform[0])/geoTransform[1] );
+                      var py = Math.round((  pointCoords[1] - geoTransform[3])/geoTransform[5]);
+              
+                      if(Math.floor(px) >= 0 && Math.ceil(px) < image.getWidth() && Math.floor(py) >= 0 && Math.ceil(py) < image.getHeight()){
+                        var value = tempData[py][px];
+                        var alpha = 200;
+                        if (value > 0){
+                          context.fillStyle = getColor(value);
+                          context.fillRect(i , j , 1, 1);
+                        }
+  
+                      }
+                    }
+                  }
+                })()
+                 }).catch(e => console.log(e))
+
+            })
+            function getColor(v){
+                  const range = [250,255,260,265,270,275,280,285],
+                  colors = [
+                      'rgb(0,0,255)',
+                      'rgb(1,102,255)',
+                      'rgb(0,255,179)',
+                      'rgb(0,255,125)',
+                      'rgb(0,255,0)',
+                      'rgb(125,255,0)',
+                      'rgb(255,255,0)',
+                      'rgb(255,120,0)'
+                  ]
+
+                  const index = range.findIndex(el => el >= v)
+                  return colors[index === -1 ? colors.length-1 : index]
+            }
+
+    </script>
+
+</body>
+</html>
