@@ -40,7 +40,11 @@
     for (var i=0;i<10000;i++) {
         var circleMarker = L.circleMarker([point.latitude+Math.random()*40,point.longitude+Math.random()*60], {
             renderer: myRenderer,
-            color: '#3388ff'
+            stroke:false,
+            fillColor: '#19ffb4',
+            fill:true,
+            radius:5,
+            fillOpacity:1
         }).addTo(map);
     }
 
