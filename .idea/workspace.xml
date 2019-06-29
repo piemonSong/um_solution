@@ -19,8 +19,8 @@
         <entry file="file://$PROJECT_DIR$/leaflet_tips/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="489">
-                <caret line="146" column="91" selection-start-line="146" selection-start-column="91" selection-end-line="146" selection-end-column="91" />
+              <first_editor relative-caret-position="527">
+                <caret line="148" column="37" selection-start-line="148" selection-start-column="37" selection-end-line="148" selection-end-column="37" />
               </first_editor>
               <second_editor />
             </state>
@@ -178,6 +178,12 @@
               <item name="um_solution" type="b2602c69:ProjectViewProjectNode" />
               <item name="um_solution" type="462c0819:PsiDirectoryNode" />
               <item name="leaflet_tips" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="um_solution" type="b2602c69:ProjectViewProjectNode" />
+              <item name="um_solution" type="462c0819:PsiDirectoryNode" />
+              <item name="leaflet_tips" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -190,16 +196,16 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/leaflet_tips/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/leaflet_tips/img" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Users\song\unimeteor\um_solution\leaflet_tips\img" />
       <recent name="F:\Users\song\unimeteor\um_solution\leaflet_tips\lib" />
       <recent name="F:\Users\song\unimeteor\um_solution\leaflet_tips\data" />
-      <recent name="F:\Users\song\unimeteor\um_solution\leaflet_tips\img" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -225,12 +231,12 @@
       <option name="presentableId" value="Default" />
       <updated>1561712466173</updated>
       <workItem from="1561712467497" duration="3265000" />
-      <workItem from="1561780129518" duration="26177000" />
+      <workItem from="1561780129518" duration="26564000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29442000" />
+    <option name="totallyTimeSpent" value="29829000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1552" height="840" extended-state="0" />
@@ -327,8 +333,8 @@
     <entry file="file://$PROJECT_DIR$/leaflet_tips/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="489">
-            <caret line="146" column="91" selection-start-line="146" selection-start-column="91" selection-end-line="146" selection-end-column="91" />
+          <first_editor relative-caret-position="527">
+            <caret line="148" column="37" selection-start-line="148" selection-start-column="37" selection-end-line="148" selection-end-column="37" />
           </first_editor>
           <second_editor />
         </state>

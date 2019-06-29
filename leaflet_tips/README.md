@@ -145,3 +145,6 @@ leaflet API 提供以canvas形式渲染。
    修改后js文件后见[georaster-layer-for-leaflet_interpotation.bundle](lib/georaster-layer-for-leaflet_interpotation.bundle.js)
    
    展示[DEMO](https://piemonsong.github.io/um_solution/leaflet_tips/example/leaflet-tiff.html)
+   <div>
+    <img src='../lib/leaflet-tiff.jpg' />
+   </div>
