@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89198f56-526d-4ad2-9d36-b966d454ad6f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leaflet_tips/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/leaflet_tips/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/leaflet_tips/example/leaflet-echarts.html" beforeDir="false" afterPath="$PROJECT_DIR$/leaflet_tips/example/leaflet-echarts.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -17,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/leaflet_tips/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="449">
+              <first_editor relative-caret-position="589">
                 <caret line="79" column="109" selection-start-line="79" selection-start-column="109" selection-end-line="79" selection-end-column="109" />
               </first_editor>
               <second_editor />
@@ -29,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/leaflet_tips/example/leaflet-echarts.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="361">
-              <caret line="510" selection-start-line="510" selection-end-line="515" selection-end-column="32" />
+              <caret line="23" column="12" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
               <folding>
                 <element signature="e#832#7935#0" />
                 <element signature="e#7964#14378#0" />
@@ -59,7 +57,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/leaflet_tips/example/ten-thousand-points.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
+            <state relative-caret-position="-247">
               <caret line="8" selection-start-line="8" selection-end-line="17" selection-end-column="12" />
             </state>
           </provider>
@@ -89,8 +87,8 @@
       <list>
         <option value="$PROJECT_DIR$/leaflet_tips/example/ten-thousand-points.html" />
         <option value="$PROJECT_DIR$/leaflet_tips/lib/leaflet-echarts.js" />
-        <option value="$PROJECT_DIR$/leaflet_tips/example/leaflet-echarts.html" />
         <option value="$PROJECT_DIR$/leaflet_tips/README.md" />
+        <option value="$PROJECT_DIR$/leaflet_tips/example/leaflet-echarts.html" />
       </list>
     </option>
   </component>
@@ -178,12 +176,12 @@
       <option name="presentableId" value="Default" />
       <updated>1561712466173</updated>
       <workItem from="1561712467497" duration="3265000" />
-      <workItem from="1561780129518" duration="15651000" />
+      <workItem from="1561780129518" duration="15970000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18916000" />
+    <option name="totallyTimeSpent" value="19235000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -215,13 +213,6 @@
     <entry file="file://$PROJECT_DIR$/geotiff_2Img_overlay/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/leaflet_tips/example/ten-thousand-points.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" selection-start-line="8" selection-end-line="17" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/leaflet_tips/lib/leaflet-echarts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-219">
@@ -233,25 +224,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/leaflet_tips/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="589">
+            <caret line="79" column="109" selection-start-line="79" selection-start-column="109" selection-end-line="79" selection-end-column="109" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leaflet_tips/example/ten-thousand-points.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-247">
+          <caret line="8" selection-start-line="8" selection-end-line="17" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/leaflet_tips/example/leaflet-echarts.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
-          <caret line="510" selection-start-line="510" selection-end-line="515" selection-end-column="32" />
+          <caret line="23" column="12" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
           <folding>
             <element signature="e#832#7935#0" />
             <element signature="e#7964#14378#0" />
             <element signature="e#14423#14819#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/leaflet_tips/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="449">
-            <caret line="79" column="109" selection-start-line="79" selection-start-column="109" selection-end-line="79" selection-end-column="109" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
