@@ -1,6 +1,6 @@
 ## 目录
 
-##### 🌐 [投影坐标系](#投影坐标系)
+##### 🌐 [投影坐标系](#1-投影坐标系)
 ##### 🍀 大量点问题
 ##### 🎨 格点场渲染
 ##### 🌀 矢量风动画
@@ -78,5 +78,65 @@ leaflet API 提供以canvas形式渲染。
        layer.setOption(option);
 ```
    根据echarts官网散点图实例的[DEMO](https://piemonsong.github.io/um_solution/leaflet_tips/example/leaflet-echarts.html)
+
+#### 2.格点场渲染
+   格点场渲染，只要是请求读取tiff数据，通过[georaster-layer-for-leaflet](https://github.com/GeoTIFF/georaster-layer-for-leaflet)资源库实现的。
+   目前版本只适用于经纬度投影，墨卡托投影在地图范围较大时候产生很大偏差。这个资源库保留tiff数据格点大小，因此放大地图会有像素块显示。
+   > 解决方式通过前端插值方式
    
-   
+   默认是通过canvas切片每个点经纬度坐标获取在tiff栅格上位置，向下取整获得位置(x,y)，根据(x,y)来获取数据值
+  ```javascript
+    // pixelWidth*pixelHeight tiff
+    let x_in_raster_pixels = Math.floor( (lng - xmin) / pixelWidth );
+    let y_in_raster_pixels = Math.floor( (ymax - lat) / pixelHeight );
+    raster[y_in_raster_pixels][x_in_raster_pixels]
+```
+   改为插值获取数据
+   ```javascript
+    interpolatedValueAtIndexes((lng - xmin) / pixelWidth,(ymax - lat) / pixelHeight)
+    
+    function interpolatedValueAtIndexes(i,j){
+            const raster = this._rasters[0]
+            let tiff_width = this._tiff_width
+            let tiff_height = this._tiff_height;
+            let fi,fj,ci,cj
+            let g00, g10, g01, g11
+            if(i >= tiff_width - 1){
+              fi = ci =  tiff_width - 1
+            }else{
+              fi = Math.floor(i)
+              ci = fi + 1
+            }
+            if(j >= tiff_height - 1){
+              fj = cj =  tiff_height - 1
+            }else{
+              fj = Math.floor(j)
+              cj = fj + 1
+            }
+            const row0 = raster[fj]
+              g00 = row0[fi]
+              g10 = row0[ci];
+    
+          const row1 = raster[cj]
+    
+          g01 = row1[fi]
+          g11 = row1[ci];
+          return this._doInterpolation(i-fi,j-fj,g00, g10, g01, g11)
+        }
+          /**
+           * Bilinear interpolation for Number
+           * https://en.wikipedia.org/wiki/Bilinear_interpolation
+           * @param   {Number} x
+           * @param   {Number} y
+           * @param   {Number} g00
+           * @param   {Number} g10
+           * @param   {Number} g01
+           * @param   {Number} g11
+           * @returns {Number}
+           */
+          function _doInterpolation(x, y, g00, g10, g01, g11) {
+            var rx = 1 - x;
+            var ry = 1 - y;
+            return g00 * rx * ry + g10 * x * ry + g01 * rx * y + g11 * x * y;
+          }
+```
