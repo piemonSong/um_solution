@@ -8,7 +8,7 @@
 ##### 🏀 前端读取TIFF画图（d3）
 
 
-#### 一. 投影坐标系
+#### 1.投影坐标系
    [天地图](http://lbs.tianditu.gov.cn/server/MapService.html)提供的底图投影主要包括两种经纬度投影、球面墨卡托投影。
    分别对应EPSG Code为EPSG:4326、EPSG:3857
    
@@ -53,5 +53,30 @@ leaflet API 提供以canvas形式渲染。
    ```
    > 此外，使用这种方式渲染点，Leaflet仍会跟踪鼠标位置来触发相关Circle Marker事件
    
-   可以使用leaflet中加载echarts图层，既可以满足渲染速度，同时也可以使用echarts中炫酷的效果、tooltips等功能
+   可以使用leaflet中加载echarts图层，既可以满足渲染速度，同时也可以使用echarts中炫酷的效果、tooltips等功能。
+   关于此功能，可以参考[leaflet-echarts.js](lib/leaflet-echarts.js)(待完善)，自定义leaflet图层对象。
+   
+   echarts option需要如下配置
+   ```javascript
+   option = {
+     geo:{},
+     series:[{
+         coordinateSystem: 'geo',
+         data:data
+     }
+     ]
+   }
+    
+```
+    然后创建leaflet图层，在图层的container 上绘制echarts的内容
+   ```javascript
+       //创建图层
+       var layer =  new L.EchartsLayer(map, echarts);
+       //创建echarts container
+       var container = layer.getEchartsContainer();
+       layer.initECharts(container);
+       layer.setOption(option);
+```
+   根据echarts官网散点图实例的[DEMO](https://piemonsong.github.io/um_solution/leaflet_tips/example/leaflet-echarts.html)
+   
    
