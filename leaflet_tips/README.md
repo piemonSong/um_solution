@@ -1,6 +1,6 @@
 ## 目录
 
-##### 🌐 [投影坐标系](#一. 投影坐标系)
+##### 🌐 [投影坐标系](#投影坐标系)
 ##### 🍀 大量点问题
 ##### 🎨 格点场渲染
 ##### 🌀 矢量风动画
@@ -51,7 +51,7 @@ leaflet API 提供以canvas形式渲染。
         color: '#3388ff'
     }).addTo(map);
    ```
-   此外，使用这种方式渲染点，Leaflet仍会跟踪鼠标位置来触发相关Circle Marker事件
+   > 此外，使用这种方式渲染点，Leaflet仍会跟踪鼠标位置来触发相关Circle Marker事件
    
-   > 可以使用leaflet中加载echarts图层，既可以满足渲染速度，同时也可以使用echarts中炫酷的效果、tooltips等功能
+   可以使用leaflet中加载echarts图层，既可以满足渲染速度，同时也可以使用echarts中炫酷的效果、tooltips等功能
    
