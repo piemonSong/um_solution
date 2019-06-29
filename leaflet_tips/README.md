@@ -68,7 +68,7 @@ leaflet API 提供以canvas形式渲染。
    }
     
 ```
-    然后创建leaflet图层，在图层的container 上绘制echarts的内容
+   然后创建leaflet图层，在图层的container 上绘制echarts的内容
    ```javascript
        //创建图层
        var layer =  new L.EchartsLayer(map, echarts);
@@ -78,7 +78,9 @@ leaflet API 提供以canvas形式渲染。
        layer.setOption(option);
 ```
    根据echarts官网散点图实例的[DEMO](https://piemonsong.github.io/um_solution/leaflet_tips/example/leaflet-echarts.html)
-
+    <div>
+        <img src="img/echarts-demo.jpg" />
+    </div>
 #### 2.格点场渲染
    格点场渲染，只要是请求读取tiff数据，通过[georaster-layer-for-leaflet](https://github.com/GeoTIFF/georaster-layer-for-leaflet)资源库实现的。
    目前版本只适用于经纬度投影，墨卡托投影在地图范围较大时候产生很大偏差。这个资源库保留tiff数据格点大小，因此放大地图会有像素块显示。
@@ -91,7 +93,7 @@ leaflet API 提供以canvas形式渲染。
     let y_in_raster_pixels = Math.floor( (ymax - lat) / pixelHeight );
     raster[y_in_raster_pixels][x_in_raster_pixels]
 ```
-   改为插值获取数据
+   改为插值获取数据(采用双线性插值方式)
    ```javascript
     interpolatedValueAtIndexes((lng - xmin) / pixelWidth,(ymax - lat) / pixelHeight)
     
@@ -139,4 +141,5 @@ leaflet API 提供以canvas形式渲染。
             var ry = 1 - y;
             return g00 * rx * ry + g10 * x * ry + g01 * rx * y + g11 * x * y;
           }
-```
+  ```
+   修改后js文件后见[georaster-layer-for-leaflet_interpotation.bundle](lib/georaster-layer-for-leaflet_interpotation.bundle.js)

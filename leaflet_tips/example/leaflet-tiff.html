@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ten-thousand-points-leaflet</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="../lib/nouislider.min.css"/>
+    <style>
+        html,body{
+            padding: 0;
+            margin: 0;
+            height: 100%;
+        }
+        #map{
+            height: 100%;
+        }
+        .legend{
+            width:600px;
+            height: 140px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: #fff;
+            padding: 10px;
+            z-index: 99999;
+
+        }
+        .legend-color{
+            height: 25px;
+            background:linear-gradient(to right,#0000ff,#00ffff, #00ff00, #ffff00, #ff0000);
+        }
+        h3{
+            padding: 10px 0;
+            margin: 0;
+            font-size: 14px;
+            text-align: center;
+            font-weight: normal;
+        }
+        .min,.max{
+            position: absolute;
+            top:75px;
+            color:#777!important;
+            font-size: 12px;
+            display: inline-block;
+
+        }
+        .min{
+            left: 10px;
+        }
+        .max{
+            right: 10px;
+        }
+
+        #skipstep{
+            margin: 24px 30px 4px 30px;
+            width: 540px;
+        }
+        #slider-text{
+            font-size: 14px;
+            color:#ccc;
+            padding: 5px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="map">
+
+</div>
+<div class="legend">
+    <h3>图例（压强 单位：Pa）</h3>
+    <div class="legend-color">
+    </div>
+    <a id="min" class="min">
+        0
+    </a>
+    <a id="max" class="max">
+        1
+    </a>
+    <div id="skipstep">
+    </div>
+    <div id="slider-text">
+
+    </div>
+</div>
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+<script src="https://unpkg.com/georaster@0.5.2/dist/georaster.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
+<script src="../lib/georaster-layer-for-leaflet_interpotation.bundle-test.js"></script>
+<script src="../lib/nouislider.min.js"></script>
+<script>
+    var map = L.map('map', {
+        center: [40, 120],
+        crs: L.CRS.EPSG4326,
+        zoom: 3
+    });
+
+    L.tileLayer('http://t1.tianditu.com/vec_c/wmts?layer=vec&style=default&tilematrixset=c&Service=WMTS&Request=GetTile&Version=1.0.0&Format=tiles&TileMatrix={z}&TileCol={x}&TileRow={y}&tk=a10b5d58603d9a7abfe4731e8360fa91"', {
+        maxZoom: 20,
+        tileSize: 256,
+        zoomOffset: 1
+    }).addTo(map);
+    var url_to_geotiff_file = '../data/pressure.tif'
+    fetch(url_to_geotiff_file)
+        .then(response => response.arrayBuffer())
+        .then(arrayBuffer => {
+            parseGeoraster(arrayBuffer).then(georaster => {
+                let min =  parseInt(georaster.mins[0]),max = parseInt(georaster.maxs[0])
+                document.getElementById('min').innerHTML = min
+                document.getElementById('max').innerHTML = max
+
+                var skipSlider = document.getElementById('skipstep');
+                var sliderText = document.getElementById('slider-text');
+                sliderText.innerText = '1'
+                noUiSlider.create(skipSlider, {
+                    start: [min,max],
+
+                    // Disable animation on value-setting,
+                    // so the sliders respond immediately.
+                    animate: false,
+                    range: {
+                        min: min,
+                        max: max
+                    },
+                    step: 100,
+                });
+
+                var layer = new GeoRasterLayer({
+                    georaster: georaster,
+                    opacity: 0.5,
+                    color:chroma.scale(["#0000ff",'#00ffff', "#00ff00", "#ffff00", "#ff0000"]),
+                    updateWhenZooming:false,
+                    noWrap:true
+                });
+
+                layer.addTo(map);
+
+                skipSlider.noUiSlider.on('end', function (v) {
+                    // console.log(v)
+                    layer.setRange(+v[0],+v[1])
+                    sliderText.innerText = '最小值：'+(+v[0])+'，最大值：'+(+v[1])
+
+                });
+            })
+        })
+
+
+</script>
+</body>
+</html>
