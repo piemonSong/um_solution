@@ -146,5 +146,5 @@ leaflet API 提供以canvas形式渲染。
    
    展示[DEMO](https://piemonsong.github.io/um_solution/leaflet_tips/example/leaflet-tiff.html)
    <div>
-    <img src='../img/leaflet-tiff.jpg' />
+    <img src='img/leaflet-tiff.jpg' />
    </div>
