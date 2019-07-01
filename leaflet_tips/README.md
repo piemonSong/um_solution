@@ -3,9 +3,10 @@
 ##### 🌐 [投影坐标系](#1投影坐标系)
 ##### 🍀 [大量点问题](#2大量点数据解决方案)
 ##### 🎨 [栅格数据渲染](#3栅格数据渲染)
+##### 🏀 前端读取TIFF画图（d3）
 ##### 🌀 矢量风动画
 ##### 🚀 自定义图层在VUE使用中
-##### 🏀 前端读取TIFF画图（d3）
+
 
 
 #### 1.投影坐标系
@@ -82,6 +83,7 @@ leaflet API 提供以canvas形式渲染。
         <img src="img/echarts-demo.jpg" />
     </div>
 #### 3.栅格数据渲染
+
    格点场渲染，只要是请求读取tiff数据，通过[georaster-layer-for-leaflet](https://github.com/GeoTIFF/georaster-layer-for-leaflet)资源库实现的。
    目前版本只适用于经纬度投影，墨卡托投影在地图范围较大时候产生很大偏差。这个资源库保留tiff数据格点大小，因此放大地图会有像素块显示。
    > 解决方式通过前端插值方式
@@ -148,3 +150,10 @@ leaflet API 提供以canvas形式渲染。
    <div>
     <img src='img/leaflet-tiff.jpg' />
    </div>
+   
+   #####4.前端读取TIFF d3画图
+   [geotiff.js](#https://geotiffjs.github.io/) 可以客户端js读取各类GeoTIFF格式的metadata和raw array data,可以用[d3.js](#https://d3js.org/)
+   将带有地理信息的栅格数据，动态绘制。
+   
+   
+   
