@@ -1,8 +1,8 @@
 ## 目录
 
-##### 🌐 [投影坐标系](#1-投影坐标系)
-##### 🍀 大量点问题
-##### 🎨 格点场渲染
+##### 🌐 [投影坐标系](#1投影坐标系)
+##### 🍀 [大量点问题](#2大量点数据解决方案)
+##### 🎨 [栅格数据渲染](#3栅格数据渲染)
 ##### 🌀 矢量风动画
 ##### 🚀 自定义图层在VUE使用中
 ##### 🏀 前端读取TIFF画图（d3）
@@ -81,7 +81,7 @@ leaflet API 提供以canvas形式渲染。
     <div>
         <img src="img/echarts-demo.jpg" />
     </div>
-#### 2.格点场渲染
+#### 3.栅格数据渲染
    格点场渲染，只要是请求读取tiff数据，通过[georaster-layer-for-leaflet](https://github.com/GeoTIFF/georaster-layer-for-leaflet)资源库实现的。
    目前版本只适用于经纬度投影，墨卡托投影在地图范围较大时候产生很大偏差。这个资源库保留tiff数据格点大小，因此放大地图会有像素块显示。
    > 解决方式通过前端插值方式
@@ -146,5 +146,5 @@ leaflet API 提供以canvas形式渲染。
    
    展示[DEMO](https://piemonsong.github.io/um_solution/leaflet_tips/example/leaflet-tiff.html)
    <div>
-    <img src='../lib/leaflet-tiff.jpg' />
+    <img src='../img/leaflet-tiff.jpg' />
    </div>

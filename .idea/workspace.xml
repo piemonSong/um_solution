@@ -19,8 +19,8 @@
         <entry file="file://$PROJECT_DIR$/leaflet_tips/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="527">
-                <caret line="148" column="37" selection-start-line="148" selection-start-column="37" selection-end-line="148" selection-end-column="37" />
+              <first_editor relative-caret-position="-765">
+                <caret line="83" column="13" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
               </first_editor>
               <second_editor />
             </state>
@@ -30,7 +30,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/leaflet_tips/example/leaflet-tiff.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="2356">
               <caret line="124" column="29" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
             </state>
           </provider>
@@ -39,19 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/leaflet_tips/lib/georaster-layer-for-leaflet_interpotation.bundle-test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-688">
+            <state relative-caret-position="2337">
               <caret line="123" column="34" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
-              <folding>
-                <element signature="e#6429#7133#0" />
-                <element signature="e#7141#7468#0" />
-                <element signature="e#7518#7649#0" />
-                <element signature="e#7813#7849#0" />
-                <element signature="e#7890#8061#0" />
-                <element signature="e#8094#8153#0" />
-                <element signature="e#8179#8241#0" />
-                <element signature="e#8261#8994#0" />
-                <element signature="e#9019#9128#0" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -59,7 +48,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/leaflet_tips/lib/georaster-layer-for-leaflet_interpotation.bundle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2223">
+            <state relative-caret-position="2679">
               <caret line="141" column="44" selection-start-line="141" selection-start-column="44" selection-end-line="141" selection-end-column="44" />
             </state>
           </provider>
@@ -68,13 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/leaflet_tips/example/leaflet-echarts.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-684">
+            <state relative-caret-position="418">
               <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="36" />
-              <folding>
-                <element signature="e#832#7935#0" />
-                <element signature="e#7964#14378#0" />
-                <element signature="e#14423#14819#0" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -82,12 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/leaflet_tips/lib/leaflet-echarts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-219">
+            <state relative-caret-position="3382">
               <caret line="178" selection-start-line="178" selection-end-line="178" />
-              <folding>
-                <element signature="e#2495#2844#0" />
-                <element signature="e#5653#6499#0" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -95,7 +75,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/leaflet_tips/example/ten-thousand-points.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
+            <state relative-caret-position="608">
               <caret line="32" column="49" selection-end-line="52" selection-end-column="7" />
             </state>
           </provider>
@@ -134,7 +114,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="-10" />
     <option name="width" value="1940" />
     <option name="height" value="1050" />
@@ -144,7 +124,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -190,6 +169,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -232,14 +212,15 @@
       <updated>1561712466173</updated>
       <workItem from="1561712467497" duration="3265000" />
       <workItem from="1561780129518" duration="26564000" />
+      <workItem from="1561949893568" duration="457000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29829000" />
+    <option name="totallyTimeSpent" value="30286000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1552" height="840" extended-state="0" />
+    <frame x="-8" y="0" width="1552" height="840" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.31530344" />
@@ -268,75 +249,55 @@
     <entry file="file://$PROJECT_DIR$/geotiff_2Img_overlay/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/leaflet_tips/example/ten-thousand-points.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="32" column="49" selection-end-line="52" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/leaflet_tips/example/leaflet-echarts.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-684">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="36" />
-          <folding>
-            <element signature="e#832#7935#0" />
-            <element signature="e#7964#14378#0" />
-            <element signature="e#14423#14819#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/leaflet_tips/lib/leaflet-echarts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-219">
-          <caret line="178" selection-start-line="178" selection-end-line="178" />
-          <folding>
-            <element signature="e#2495#2844#0" />
-            <element signature="e#5653#6499#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/leaflet_tips/lib/georaster-layer-for-leaflet_interpotation.bundle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2223">
-          <caret line="141" column="44" selection-start-line="141" selection-start-column="44" selection-end-line="141" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/leaflet_tips/lib/georaster-layer-for-leaflet_interpotation.bundle-test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-688">
-          <caret line="123" column="34" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
-          <folding>
-            <element signature="e#6429#7133#0" />
-            <element signature="e#7141#7468#0" />
-            <element signature="e#7518#7649#0" />
-            <element signature="e#7813#7849#0" />
-            <element signature="e#7890#8061#0" />
-            <element signature="e#8094#8153#0" />
-            <element signature="e#8179#8241#0" />
-            <element signature="e#8261#8994#0" />
-            <element signature="e#9019#9128#0" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/leaflet_tips/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-765">
+            <caret line="83" column="13" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/leaflet_tips/example/leaflet-tiff.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="2356">
           <caret line="124" column="29" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/leaflet_tips/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="527">
-            <caret line="148" column="37" selection-start-line="148" selection-start-column="37" selection-end-line="148" selection-end-column="37" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/leaflet_tips/lib/georaster-layer-for-leaflet_interpotation.bundle-test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2337">
+          <caret line="123" column="34" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leaflet_tips/lib/georaster-layer-for-leaflet_interpotation.bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2679">
+          <caret line="141" column="44" selection-start-line="141" selection-start-column="44" selection-end-line="141" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leaflet_tips/example/leaflet-echarts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leaflet_tips/lib/leaflet-echarts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3382">
+          <caret line="178" selection-start-line="178" selection-end-line="178" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leaflet_tips/example/ten-thousand-points.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="32" column="49" selection-end-line="52" selection-end-column="7" />
         </state>
       </provider>
     </entry>
