@@ -26,17 +26,19 @@
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="../lib/geotiff.bundle.min.1.0.0@beta6.js"></script>
 <script src="../lib/chroma.min.js"></script>
+<script src="./colors.js"></script>
 <script>
+    console.log(getColors(11))
     const [width,height] = [600,600]
     var canvas = d3.select('#container').append("canvas")
         .attr("width", width)
         .attr("height", height);
 
     var context = canvas.node().getContext("2d");
-    context.save();
-    context.globalAlpha = "0.9";
+   // context.save();
+    context.globalAlpha = "0.8";
     let  geometry,obj = {},geoTransform,tempData,imgH,imgW;
-
+    const projection = d3.geoMercator()
     d3.json('../data/china.json').then((d)=> {
         geometry= d
 
@@ -50,7 +52,7 @@
             select.options[select.length] = (op)
         })
 
-        d3.buffer("../data/pressure.tif").then(function (tiffData,err) {
+        d3.buffer("../data/20190702.tif").then(function (tiffData,err) {
             console.log(tiffData);
 
 
@@ -61,7 +63,7 @@
                 const data = await image.readRasters();
                 const tiepoint = image.getTiePoints()[0];
                 const pixelScale = image.getFileDirectory().ModelPixelScale;
-                console.log(image,tiepoint)
+
                 imgW = image.getWidth()
                 imgH = image.getHeight()
 
@@ -74,7 +76,7 @@
                         tempData[j][i] = data[0][i + j*imgW];
                     }
                 }
-
+                drawPath()
                 select.onchange = function () {
                     const id = this.value
                     console.log(id)
@@ -86,20 +88,24 @@
     }).catch(e => console.log(e))
 
     function drawPath(id) {
-        context.restore();
-        const imgdata = context.createImageData(width, height);
+       // context.restore();
         context.clearRect(0, 0, width, height)
+        const imgdata = context.createImageData(width, height);
 
-        const f = geometry.features.filter(f => f.properties.id == id)
-
-        obj.features = f
-
-        const bound = d3.geoBounds(obj)
-
+        if(id){
+            const f = geometry.features.filter(f => f.properties.id == id)
+            obj.features = f
+        }else{
+            obj.features =  geometry.features
+        }
         let t0 = Date.now()
-        var projection = d3.geoMercator()
+
         projection.fitExtent([[0, 0], [width, height]], obj)
+        const path = d3.geoPath()
+            .projection(projection).context(context);
+
         let pos = 0;
+
         for (var j = 0; j < height; j += 1) {
             for (var i = 0; i < width; i += 1) {
                 var pointCoords = projection.invert([i, j]);
@@ -113,13 +119,14 @@
                     var value = interpolatedValueAtIndexes(px, py);
                     //if (value > 0){
 
-                    //context.fillStyle = getColor(value);
-                    let [R, G, B, A] = getColor(value);
-                    imgdata.data[pos] = R;
-                    imgdata.data[pos + 1] = G;
-                    imgdata.data[pos + 2] = B;
-                    imgdata.data[pos + 3] = parseInt(A * 255); // not percent in alpha but hex 0-255
-                    //context.fillRect(i , j ,2, 2);
+
+                   // context.fillStyle = getColor(value);
+                     let [R, G, B, A] = getColors(value - 272.15 );
+                     imgdata.data[pos] = R;
+                     imgdata.data[pos + 1] = G;
+                     imgdata.data[pos + 2] = B;
+                     imgdata.data[pos + 3] = 255; // not percent in alpha but hex 0-255
+                     //context.fillRect(i , j ,2, 2);
                     //}
                     pos += 4
                 }
@@ -128,64 +135,41 @@
 
         context.putImageData(imgdata, 0, 0)
 
-        var path = d3.geoPath()
-            .projection(projection).context(context);
+
+        context.beginPath();
 
 
-
-        //ctx.beginPath();
         context.globalCompositeOperation = 'destination-atop'
         //'destination-out';
-        context.strokeStyle = "#000";
+
+
         context.fillStyle = "rgba(255,0,0,1)";
         path(obj);
 
         context.fill();
-        //context.stroke();
+
+        context.globalCompositeOperation = 'source-over'
+        context.strokeStyle='#777';
+        context.stroke();
         //getAImage(obj)
         let t1 = Date.now()
         console.log(t1 - t0)
 
+
     }
 
-    function getAImage(obj){
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = width;
-        canvas.height = height;
-        var projection = d3.geoMercator()
-        projection.fitExtent([[0, 0], [width, height]], obj)
-        var path = d3.geoPath()
-            .projection(projection).context(ctx);
 
-
-        ctx.fillStyle = "rgba(255,255,255,1)";
-        ctx.fillRect(0,0,width,height)
-        //ctx.beginPath();
-        ctx.globalCompositeOperation = 'xor'
-        //'destination-out';
-        ctx.strokeStyle = "#000";
-        ctx.fillStyle = "rgba(255,0,0,1)";
-        path(obj);
-
-        ctx.fill();
-        ctx.stroke();
-
-        const image = document.getElementById('img') || new Image();
-        image.src = canvas.toDataURL();
-        image.className ='img'
-        image.id ='img'
-        document.getElementById('container').appendChild(image)
-        //console.log(image)
-        //return image;
-    }
-
-    const d = 1/(110000 - 90000)
-    const scale =  chroma.scale(["#0000ff", "#00fff7", "#00ff08", "#ffff00", "#ff0000"])
-        .domain([80000,85000,95000,100000,101000,101500,102000,102500,103000,103500])
+    const d = 1/(320 - 260)
+    const scale =  chroma.scale(["#0000ff",
+        "#00fff7",
+        "#00ff08",
+        "#ffff00",
+        "#ff0000"])
+        .domain([260,310])
     //.domain([60000,110000])
     function getColor(v){
         return scale(v).rgba()
+           // .rgba()
 
     }
 
