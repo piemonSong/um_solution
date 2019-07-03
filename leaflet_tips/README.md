@@ -151,7 +151,7 @@ leaflet API 提供以canvas形式渲染。
     <img src='img/leaflet-tiff.jpg' />
    </div>
    
-   #####4.前端读取TIFF d3画图
+#### 4.前端读取TIFF d3画图
    [geotiff.js](#https://geotiffjs.github.io/) 可以客户端js读取各类GeoTIFF格式的metadata和raw array data,可以用[d3.js](#https://d3js.org/)
    将带有地理信息的栅格数据，动态绘制。
    
