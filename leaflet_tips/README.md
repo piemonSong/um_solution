@@ -3,8 +3,8 @@
 ##### 🌐 [投影坐标系](#1投影坐标系)
 ##### 🍀 [大量点问题](#2大量点数据解决方案)
 ##### 🎨 [栅格数据渲染](#3栅格数据渲染)
-##### 🏀 前端读取TIFF画图（d3）
-##### 🌀 矢量风动画
+##### 🏀 [前端读取TIFF画图（d3）](#4前端读取TIFF d3画图)
+##### 🌀 [矢量风动画](#5风矢量动画)
 ##### 🚀 自定义图层在VUE使用中
 
 
@@ -158,4 +158,34 @@ leaflet API 提供以canvas形式渲染。
    全国气温图[DEMO](https://piemonsong.github.io/um_solution/leaflet_tips/example/d3-geotiff-draw-province.html)
    
    
+#### 5.风矢量动画
+  风矢量动画是利用[leaflet-velocity](https://github.com/danwild/leaflet-velocity)github 插件库实现的，但是此插件库只适用于leaflet
+  默认投影(3857),在等经纬度存在问题。
+  可以在此插件库上进行如下改进：
+  ```javascript
+    //leaflet-velocity 默认方法invert（3857投影）
+   	var invert = function invert(x, y, windy) {
+   		var mapLonDelta = windy.east - windy.west;
+   		var worldMapRadius = windy.width / rad2deg(mapLonDelta) * 360 / (2 * Math.PI);
+   		var mapOffsetY = worldMapRadius / 2 * Math.log((1 + Math.sin(windy.south)) / (1 - Math.sin(windy.south)));
+   		var equatorY = windy.height + mapOffsetY;
+   		var a = (equatorY - y) / worldMapRadius;
    
+   		var lat = 180 / Math.PI * (2 * Math.atan(Math.exp(a)) - Math.PI / 2);
+   		var lon = rad2deg(windy.west) + x / windy.width * rad2deg(mapLonDelta);
+   		return [lon, lat];
+   	};
+```
+ 修改为：
+```javascript
+        //修改后（4326投影）
+    	var invert = function invert(x, y, windy) {
+    		var mapLonDelta = windy.east - windy.west;
+    		var mapLatDelta = windy.south - windy.north;
+    		var lat = rad2deg(windy.north) + y / windy.height * rad2deg(mapLatDelta);
+    		var lon = rad2deg(windy.west) + x / windy.width * rad2deg(mapLonDelta);
+    		return [lon, lat];
+    	};
+
+```
+

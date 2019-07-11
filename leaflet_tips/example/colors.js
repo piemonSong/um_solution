@@ -37,11 +37,45 @@ var temColor = [
     "#6F0015",
     "#50000F",
 ]
-var colorNum = Array.from({length:36},(v,i)=>-30+i*2)
+var color2 = ["#0000ff",
+    "#0014ff",
+    "#0045ff",
+    "#0065ff",
+    "#0085ff",
+    "#00a6ff",
+    "#00cbff",
+    "#00ebff",
+    "#00fff7",
+    "#00ffd6",
+    "#00ffb5",
+    "#00ff94",
+    "#00ff73",
+    "#00ff52",
+    "#00ff29",
+    "#00ff08",
+    "#10ff00",
+    "#31ff00",
+    "#52ff00",
+    "#73ff00",
+    "#94ff00",
+    "#b5ff00",
+    "#deff00",
+    "#ffff00",
+    "#ffe700",
+    "#ffc300",
+    "#ffa200",
+    "#ff8200",
+    "#ff6100",
+    "#ff4100",
+    "#ff2c00",
+    "#ff2000",
+    "#ff1400",
+    "#ff0000"]
+var colorNum = Array.from({length:33},(v,i)=>8+i)
 
 var getColors = val=>{
    let index =  colorNum.findIndex(v=> val<= v)
-   const hexColor = temColor[index===-1?colorNum.length:index]
+   const hexColor = color2[index===-1?colorNum.length:index]
     return [
        parseInt( hexColor.substr(1,2),16),
        parseInt( hexColor.substr(3,2),16),

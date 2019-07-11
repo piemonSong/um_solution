@@ -14,21 +14,30 @@
             margin: 50px auto;
             border: 2px solid #000;
         }
+        #select {
+            padding: 3px 6px;
+            margin: 10px 45%;
+            display: block;
+        }
     </style>
 </head>
 <body>
-<select id="select"></select>
+<select id="select">
+    <option value="0">全国</option>
+</select>
 <div id="container">
 
 </div>
 
 
 <script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://unpkg.com/d3-geo-scale-bar@0.2.0/build/d3-geo-scale-bar.min.js"></script>
+
 <script src="../lib/geotiff.bundle.min.1.0.0@beta6.js"></script>
 <script src="../lib/chroma.min.js"></script>
 <script src="./colors.js"></script>
 <script>
-    console.log(getColors(11))
+
     const [width,height] = [600,600]
     var canvas = d3.select('#container').append("canvas")
         .attr("width", width)
@@ -92,11 +101,11 @@
         context.clearRect(0, 0, width, height)
         const imgdata = context.createImageData(width, height);
 
-        if(id){
+        if(id&&id!=="0"){
             const f = geometry.features.filter(f => f.properties.id == id)
             obj.features = f
         }else{
-            obj.features =  geometry.features
+            obj.features =  geometry.features.slice()
         }
         let t0 = Date.now()
 
@@ -116,10 +125,9 @@
                 if (Math.floor(px) >= 0 && Math.ceil(px) < imgW && Math.floor(py) >= 0 && Math.ceil(py) < imgH
                 //&& d3.geoContains(obj,pointCoords
                 ) {
-                    var value = interpolatedValueAtIndexes(px, py);
+                    var value = tempData[Math.floor(py)][Math.floor(px)]
+                        //interpolatedValueAtIndexes(px, py);
                     //if (value > 0){
-
-
                    // context.fillStyle = getColor(value);
                      let [R, G, B, A] = getColors(value - 272.15 );
                      imgdata.data[pos] = R;
@@ -145,16 +153,19 @@
 
         context.fillStyle = "rgba(255,0,0,1)";
         path(obj);
-
+        console.log(projection.center())
         context.fill();
 
         context.globalCompositeOperation = 'source-over'
         context.strokeStyle='#777';
         context.stroke();
-        //getAImage(obj)
+
         let t1 = Date.now()
         console.log(t1 - t0)
-
+        const p1 = projection.invert([0, height / 2]);
+        const p2 = projection.invert([width, height / 2]);
+        console.log(p1,p2)
+        drawScaleBar(context,p1,p2)
 
     }
 
@@ -171,6 +182,41 @@
         return scale(v).rgba()
            // .rgba()
 
+    }
+    /**
+     *@params context canvas render
+     * @params geoJson geometry
+     **/
+    function drawScaleBar(context,p1,p2) {
+
+        const distance = d3.geoDistance(p1,p2)
+        const meter = distance* 6371e3 //跨度米m
+        console.log('meter:'+meter)
+        let pixelDiv = width / 50,devMeter = Math.floor(meter/pixelDiv);
+        let digit = devMeter.toString().length;
+        devMeter = Math.floor(devMeter/Math.pow(10,digit-1))*Math.pow(10,digit-1);
+
+        let devPixeLen = devMeter*width/meter,
+       label = [0,devMeter,2*devMeter],unit = 'm'
+        if(digit>=3){
+            label =label.map(v=>v/1000)
+            unit = 'km'
+        }
+
+        context.beginPath()
+        context.fillStyle ='#000000'
+        context.strokeStyle ='#000000'
+        context.rect(10,height - 30,devPixeLen,7)
+        context.fill()
+        context.rect(10+devPixeLen,height - 30,devPixeLen,7)
+        context.stroke()
+        context.font = "12px serif";
+        context.fillText(label[0], 8, height - 12);
+
+        context.fillText(label[1], 5+devPixeLen, height - 12);
+        context.fillText(label[2], 5+2*devPixeLen, height - 12);
+
+        context.fillText(unit,2*devPixeLen+30, height - 14)
     }
 
     function interpolatedValueAtIndexes(i,j){
