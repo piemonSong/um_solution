@@ -51,10 +51,9 @@
     fetch('../data/wind-global.json').then((response)=>{
         return response.json();
     })
-        .then((myJson) =>{
-
-            layer.setData(myJson)
-        });
+    .then((myJson) =>{
+        layer.setData(myJson)
+    });
 </script>
 </body>
 </html>

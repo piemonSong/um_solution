@@ -159,7 +159,7 @@ leaflet API 提供以canvas形式渲染。
    
    
 #### 5.风矢量动画
-  风矢量动画是利用[leaflet-velocity](https://github.com/danwild/leaflet-velocity)github 插件库实现的，但是此插件库只适用于leaflet
+  风矢量动画是利用[leaflet-velocity](https://github.com/danwild/leaflet-velocity) github 插件库实现的，但是此插件库只适用于leaflet
   默认投影(3857),在等经纬度存在问题。
   可以在此插件库上进行如下改进：
   ```javascript
@@ -188,4 +188,6 @@ leaflet API 提供以canvas形式渲染。
     	};
 
 ```
+[DEMO](https://piemonsong.github.io/um_solution/leaflet_tips/example/wind.html)
+> 🔊 但是目前此方法在地图zoom 4以上级别（0-3）显示存在问题
 
