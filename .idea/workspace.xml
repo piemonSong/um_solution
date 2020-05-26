@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89198f56-526d-4ad2-9d36-b966d454ad6f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/leaflet_tips/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/leaflet_tips/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaflet_tips/example/leaflet-tiff.html" beforeDir="false" afterPath="$PROJECT_DIR$/leaflet_tips/example/leaflet-tiff.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,22 +19,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/leaflet_tips/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="152">
-                <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/leaflet_tips/example/wind.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
+            <state relative-caret-position="1007">
               <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
             </state>
           </provider>
@@ -43,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/leaflet_tips/example/leaflet-echarts.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="19">
-              <caret line="1" column="16" lean-forward="true" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+              <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -60,8 +49,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/leaflet_tips/example/d3-geotiff-draw-province.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+            <state relative-caret-position="703">
+              <caret line="37" column="35" lean-forward="true" selection-end-line="260" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -70,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/leaflet_tips/lib/leaflet-echarts.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3344">
-              <caret line="176" column="18" lean-forward="true" selection-start-line="173" selection-start-column="14" selection-end-line="176" selection-end-column="18" />
+              <caret line="176" column="18" selection-start-line="173" selection-start-column="14" selection-end-line="176" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -78,8 +67,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/leaflet_tips/lib/leaflet-velocity4326.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12521">
+            <state relative-caret-position="512">
               <caret line="659" column="8" selection-start-line="659" selection-start-column="8" selection-end-line="659" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/leaflet_tips/example/colorMap.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2660">
+              <caret line="156" column="19" selection-start-line="152" selection-end-line="160" selection-end-column="28" />
+              <folding>
+                <element signature="n#table#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#table#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#table#2;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#table#3;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -87,8 +96,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/leaflet_tips/example/colors.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1387">
-              <caret line="73" column="46" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
+            <state>
+              <caret column="14" lean-forward="true" selection-start-column="14" selection-end-line="38" selection-end-column="1" />
+              <folding>
+                <element signature="e#15#573#0" />
+                <element signature="e#587#1093#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,8 +109,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/leaflet_tips/example/leaflet-tiff.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1729">
-              <caret line="91" selection-start-line="91" selection-end-line="101" selection-end-column="18" />
+            <state relative-caret-position="1805">
+              <caret line="95" column="7" lean-forward="true" selection-start-line="95" selection-start-column="7" selection-end-line="95" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/leaflet_tips/lib/georaster-layer-for-leaflet_interpotation.bundle-test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2090">
+              <caret line="239" column="29" selection-start-line="239" selection-start-column="29" selection-end-line="239" selection-end-column="29" />
+              <folding>
+                <element signature="e#2398#6562#0" />
+                <element signature="e#6599#7303#0" />
+                <element signature="e#7311#7638#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,6 +150,8 @@
       <find>interpolateField</find>
       <find>_clearAndRestart</find>
       <find>_startWindy</find>
+      <find>zoom</find>
+      <find>updateWhenZooming</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -135,26 +164,29 @@
         <option value="$PROJECT_DIR$/leaflet_tips/lib/leaflet-echarts.js" />
         <option value="$PROJECT_DIR$/leaflet_tips/example/leaflet-echarts.html" />
         <option value="$PROJECT_DIR$/leaflet_tips/lib/georaster-layer-for-leaflet_interpotation.bundle.js" />
-        <option value="$PROJECT_DIR$/leaflet_tips/lib/georaster-layer-for-leaflet_interpotation.bundle-test.js" />
-        <option value="$PROJECT_DIR$/leaflet_tips/example/leaflet-tiff.html" />
         <option value="$PROJECT_DIR$/leaflet_tips/example/colors.js" />
         <option value="$PROJECT_DIR$/leaflet_tips/lib/leaflet-velocity4326.js" />
         <option value="$PROJECT_DIR$/leaflet_tips/example/d3-geotiff-draw-province.html" />
         <option value="$PROJECT_DIR$/leaflet_tips/example/wind.html" />
         <option value="$PROJECT_DIR$/leaflet_tips/README.md" />
+        <option value="$PROJECT_DIR$/leaflet_tips/example/leaflet-tiff.html" />
+        <option value="$PROJECT_DIR$/leaflet_tips/lib/georaster-layer-for-leaflet_interpotation.bundle-test.js" />
+        <option value="$PROJECT_DIR$/leaflet_tips/example/colorMap.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="222" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="2025" />
+    <option name="y" value="129" />
     <option name="width" value="1552" />
-    <option name="height" value="839" />
+    <option name="height" value="840" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -200,14 +232,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/leaflet_tips/data" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
@@ -252,18 +283,29 @@
       <workItem from="1562156003737" duration="3960000" />
       <workItem from="1562207460153" duration="4028000" />
       <workItem from="1562722809514" duration="10095000" />
-      <workItem from="1562847055038" duration="2919000" />
+      <workItem from="1562847055038" duration="3006000" />
+      <workItem from="1562894609672" duration="141000" />
+      <workItem from="1562914614909" duration="635000" />
+      <workItem from="1562920689608" duration="244000" />
+      <workItem from="1562921079726" duration="445000" />
+      <workItem from="1562922953635" duration="920000" />
+      <workItem from="1563437299629" duration="622000" />
+      <workItem from="1568795803914" duration="137000" />
+      <workItem from="1571622831174" duration="2268000" />
+      <workItem from="1571654984684" duration="6355000" />
+      <workItem from="1571733697563" duration="517000" />
+      <workItem from="1571736805907" duration="759000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70716000" />
+    <option name="totallyTimeSpent" value="83846000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="2025" y="129" width="1552" height="840" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.13474241" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.22523117" />
       <window_info id="Structure" order="1" sideWeight="0.50141644" side_tool="true" weight="0.16116248" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -275,7 +317,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.29844412" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.25070822" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.14589235" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -303,13 +345,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/leaflet_tips/lib/georaster-layer-for-leaflet_interpotation.bundle-test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="134" column="61" lean-forward="true" selection-start-line="134" selection-start-column="61" selection-end-line="134" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/leaflet_tips/data/china.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -317,10 +352,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/leaflet_tips/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="152">
+            <caret line="8" selection-start-line="8" selection-end-line="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leaflet_tips/example/wind.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1007">
+          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/leaflet_tips/example/leaflet-echarts.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
-          <caret line="1" column="16" lean-forward="true" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -331,55 +383,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/leaflet_tips/lib/leaflet-echarts.js">
+    <entry file="file://$PROJECT_DIR$/leaflet_tips/example/d3-geotiff-draw-province.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3344">
-          <caret line="176" column="18" lean-forward="true" selection-start-line="173" selection-start-column="14" selection-end-line="176" selection-end-column="18" />
+        <state relative-caret-position="703">
+          <caret line="37" column="35" lean-forward="true" selection-end-line="260" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/leaflet_tips/lib/leaflet-velocity4326.js">
+    <entry file="file://$PROJECT_DIR$/leaflet_tips/lib/leaflet-echarts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12521">
-          <caret line="659" column="8" selection-start-line="659" selection-start-column="8" selection-end-line="659" selection-end-column="8" />
+        <state relative-caret-position="3344">
+          <caret line="176" column="18" selection-start-line="173" selection-start-column="14" selection-end-line="176" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/leaflet_tips/example/colors.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1387">
-          <caret line="73" column="46" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
+        <state>
+          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-line="38" selection-end-column="1" />
+          <folding>
+            <element signature="e#15#573#0" />
+            <element signature="e#587#1093#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/leaflet_tips/example/leaflet-tiff.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1729">
-          <caret line="91" selection-start-line="91" selection-end-line="101" selection-end-column="18" />
+        <state relative-caret-position="1805">
+          <caret line="95" column="7" lean-forward="true" selection-start-line="95" selection-start-column="7" selection-end-line="95" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/leaflet_tips/example/d3-geotiff-draw-province.html">
+    <entry file="file://$PROJECT_DIR$/leaflet_tips/lib/georaster-layer-for-leaflet_interpotation.bundle-test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        <state relative-caret-position="2090">
+          <caret line="239" column="29" selection-start-line="239" selection-start-column="29" selection-end-line="239" selection-end-column="29" />
+          <folding>
+            <element signature="e#2398#6562#0" />
+            <element signature="e#6599#7303#0" />
+            <element signature="e#7311#7638#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/leaflet_tips/example/wind.html">
+    <entry file="file://$PROJECT_DIR$/leaflet_tips/lib/leaflet-velocity4326.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+        <state relative-caret-position="512">
+          <caret line="659" column="8" selection-start-line="659" selection-start-column="8" selection-end-line="659" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/leaflet_tips/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="152">
-            <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/leaflet_tips/example/colorMap.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2660">
+          <caret line="156" column="19" selection-start-line="152" selection-end-line="160" selection-end-column="28" />
+          <folding>
+            <element signature="n#table#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#table#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#table#2;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#table#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

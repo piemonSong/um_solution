@@ -1,0 +1,18 @@
+html,body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+.map-container {
+    height: 100%;
+}
+.leaflet-container{
+    background: #fff;
+}
+.my-div-icon span{
+    color:#777;
+    white-space: nowrap;
+    word-break: normal;
+    display: inline-block;
+}

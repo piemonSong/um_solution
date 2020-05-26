@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .table{
+            width: 500px;
+            margin-left: 15px;
+        }
+        .table td{
+            padding: 4px 8px;
+            line-height: 1.42857143;
+            vertical-align: top;
+            border-top: 1px solid #ddd;
+        }
+        table span{
+            display: inline-block;
+            width: 120px;
+            height: 25px;
+        }
+        .tem-table span{
+            width: 150px;
+        }
+        .tem-table{
+            width: 700px;
+        }
+    </style>
+</head>
+<body>
+    <h3>
+        分级图例
+    </h3>
+    <p>
+        温度(℃)
+    </p>
+    <table id="tem" class="table tem-table">
+        <tr>
+            <td>
+                颜色
+            </td>
+            <td>
+                颜色值
+            </td>
+            <td>
+                级别(冬季)
+            </td>
+            <td>级别(春季、秋季)</td>
+            <td>级别(夏季)</td>
+        </tr>
+    </table>
+    <p>24小时累计雨量（mm）</p>
+    <table id="rain" class="table">
+        <tr>
+            <td>
+                颜色
+            </td>
+            <td>
+                颜色值
+            </td>
+            <td>
+                级别
+            </td>
+        </tr>
+    </table>
+    <p>湿度（g/kg）</p>
+    <table id="hum" class="table">
+        <tr>
+            <td>
+                颜色
+            </td>
+            <td>
+                颜色值
+            </td>
+            <td>
+                级别
+            </td>
+        </tr>
+    </table>
+    <p>风速（m/s）</p>
+    <table id="speed" class="table">
+
+        <tr>
+            <td>
+                颜色
+            </td>
+            <td>
+                颜色值
+            </td>
+            <td>
+                级别
+            </td>
+        </tr>
+    </table>
+
+    <h3>
+        颜色渐变图例（给定阈值）
+    </h3>
+
+    <table id="linear" class="table tem-table">
+        <tr>
+            <td>
+             颜色
+            </td>
+            <td>
+              颜色值
+            </td>
+        </tr>
+    </table>
+</body>
+<script>
+    var colorList = {
+        tem: [
+            "#020C64",
+            "#071E78",
+            "#11318B",
+            "#1B449F",
+            "#2657B3",
+            "#306AC7",
+            "#3B7EDB",
+            "#4E8ADD",
+            "#6196E0",
+            "#74A3E2",
+            "#87AFE5",
+            "#9BBCE8",
+            "#9AC4DC",
+            "#99CDD0",
+            "#98D6C4",
+            "#97E8AD",
+            "#D7DE7E",
+            "#EADB70",
+            "#F4D963",
+            "#FACC4F",
+            "#F7B42D",
+            "#F29B00",
+            "#F19303",
+            "#F0840A",
+            "#EF7511",
+            "#EE6618",
+            "#EE581F",
+            "#E74B1A",
+            "#E03F16",
+            "#D93312",
+            "#D0240E",
+            "#C20003",
+            "#B50109",
+            "#A90210",
+            "#8A0519",
+            "#6F0015",
+            "#50000F",
+        ],
+        rain:[
+            'rgba(0,0,0,0)',
+            'rgb(207,255,207)',
+            'rgb(0,255,0)',
+            'rgb(51,204,51)',
+            'rgb(0,153,153)',
+            'rgb(0,130,0)',
+            'rgb(0,150,255)',
+            'rgb(0,0,255)',
+            'rgb(250,0,255)'
+        ],
+        hum:[   'rgb(85,2,131)',
+            'rgb(111,1,116)',
+            'rgb(138,0,95)',
+            'rgb(170,0,72)',
+            'rgb(197,0,48)',
+            'rgb(211,0,28)',
+            'rgb(245,0,7)',
+            'rgb(255,18,3)',
+            'rgb(255,42,4)',
+            'rgb(251,72,0)',
+            'rgb(254,95,1)',
+            'rgb(254,125,2)',
+            'rgb(255,149,2)',
+            'rgb(254,171,1)',
+            'rgb(252,185,1)',
+            'rgb(252,202,0)',
+            'rgb(255,215,3)',
+            'rgb(254,227,3)',
+            'rgb(253,241,1)',
+            'rgb(248,253,3)',
+            'rgb(208,243,4)',
+            'rgb(174,230,8)',
+            'rgb(138,221,5)',
+            'rgb(104,208,10)',
+            'rgb(59,194,12)',
+            'rgb(24,183,14)',
+            'rgb(7,185,37)',
+            'rgb(7,196,71)',
+            'rgb(7,210,120)',
+            'rgb(1,222,152)',
+            'rgb(3,234,190)',
+            'rgb(3,245,225)',
+            'rgb(0,240,253)',
+            'rgb(1,201,255)',
+            'rgb(0,163,254)',
+            'rgb(1,124,254)',
+            'rgb(1,74,255)',
+            'rgb(0,40,255)',
+            'rgb(0,1,253)'],
+        speed:[
+            'rgb(0,3,251)',
+            'rgb(0,55,255)',
+            'rgb(2,106,255)',
+            'rgb(0,163,255)',
+            'rgb(4,209,252)',
+            'rgb(0,254,246)',
+            'rgb(2,236,199)',
+            'rgb(3,219,146)',
+            'rgb(4,206,96)',
+            'rgb(6,190,44)',
+            'rgb(30,186,14)',
+            'rgb(71,200,11)',
+            'rgb(123,215,8)',
+            'rgb(177,229,5)',
+            'rgb(225,247,1)',
+            'rgb(255,245,3)',
+            'rgb(253,229,0)',
+            'rgb(254,208,1)',
+            'rgb(252,194,0)',
+            'rgb(255,173,5)',
+            'rgb(255,145,0)',
+            'rgb(255,108,2)',
+            'rgb(255,75,1)',
+            'rgb(255,40,3)',
+            'rgb(255,3,5)',
+            'rgb(227,0,27)',
+            'rgb(196,0,50)',
+            'rgb(157,1,75)',
+            'rgb(123,0,109)'
+        ]
+    }
+    var label = {
+        speed:[
+            '0～0.2',
+            '0.2～0.4',
+            '0.4～0.6',
+            '0.6～0.8',
+            '0.8～1',
+            '1～1.2',
+            '1.2～1.4',
+            '1.4～1.6',
+            '1.6～1.8',
+            '1.8～2',
+            '2～2.2',
+            '2.2～2.4',
+            '2.4～2.6',
+            '2.6～2.8',
+            '2.8～3',
+            '3～4',
+            '4～5',
+            '5～6',
+            '6～7',
+            '7～8',
+            '8～9',
+            '9～10',
+            '10～11',
+            '11～12',
+            '12～13',
+            '13～14',
+            '14～15',
+            '15～16',
+            '≥16'
+    ],
+        hum:['0～0.2',
+            '0.2～0.4',
+            '0.4～0.6',
+            '0.6～0.8',
+            '0.8～1',
+            '1～1.2',
+            '1.2～1.4',
+            '1.4～1.6',
+            '1.6～1.8',
+            '1.8～2',
+            '2～2.2',
+            '2.2～2.4',
+            '2.4～2.6',
+            '2.6～2.8',
+            '2.8～3',
+            '3～4',
+            '4～5',
+            '5～6',
+            '6～7',
+            '7～8',
+            '8～9',
+            '9～10',
+            '10～11',
+            '11～12',
+            '12～13',
+            '13～14',
+            '14～15',
+            '15～16',
+            '16～17',
+            '17～18',
+            '18～19',
+            '19～20',
+            '20～21',
+            '21～22',
+            '22～23',
+            '23～24',
+            '24～25',
+            '25～26',
+            '≥26',
+        ],
+        rain:[
+            '0~ 1',
+            '1~ 3.9',
+            '4~ 9.9',
+            '10~ 19.9',
+            '20~ 34.9',
+            '35~ 59.9',
+            '60.0~ 99.9',
+            '100~ 250.0',
+            '> 250.0'
+        ],
+        tem_1:Array.from({length:37},function (v,i) {
+            if(i===0){
+                return '<-10'
+            }else if(i===36){
+                return '>'+(-10+(i-1)*0.5)
+            }else{
+                return (-10+(i-1)*0.5)+'~ '+(-10+i*0.5)
+            }
+        }),
+        tem_2:Array.from({length:37},function (v,i) {
+            if(i===0){
+                return '<3'
+            }else if(i===36){
+                return '>'+ (3+(i-1)*0.5)
+            }else{
+                return (3+(i-1)*0.5) +'~ '+ (3+i*0.5)
+            }
+        }),
+        tem_3:Array.from({length:37},function (v,i) {
+            if(i===0){
+                return '<20'
+            }else if(i===36){
+                return '>'+ (20+i*0.5)
+            }else{
+                return (20+i*0.5) +'~ '+ (20+(i+1)*0.5)
+            }
+        })
+    }
+    var linearColors = [
+        ['#3b7ba1',
+            '#3a99a1',
+            '#32a66e',
+            '#a1a13b',
+            '#a13b3b',
+            '#a4399a'],
+        ['#a50026','#f6fbd0','#313695'],
+       ['#ffffe5',
+        '#90ee90',
+        '#008ae5'],
+        ['rgb(116,219,211)','rgb(255,255,199)','rgb(255,255,128)','rgb(217,194,121)',
+            'rgb(135,96,38)','rgb(150,150,181)','rgb(181,150,181)','rgb(252,252,252)'],
+        ['rgb(203,245,245)','rgb(129,227,188)','rgb(48,207,146)'],
+        ['rgb(242,241,162)','rgb(255,255,0)','rgb(252,3,69)','rgb(176,7,237)','rgb(7,29,173)']
+    ]
+
+    var rainTab = document.getElementById("rain");
+    colorList.rain.forEach(function (item,i) {
+        var row =  rainTab.insertRow(rainTab.rows.length)
+        var x = row.insertCell(0);
+        var y = row.insertCell(1);
+        var z = row.insertCell(2);
+        x.innerHTML = "<span style='background: "+item+"'><span>"
+        y.innerHTML = item
+        z.innerHTML = label.rain[i];
+    })
+
+    var temTab = document.getElementById("tem");
+    colorList.tem.forEach(function (item,i) {
+        var row =  temTab.insertRow(temTab.rows.length)
+        var x = row.insertCell(0);
+        var y = row.insertCell(1);
+        var z = row.insertCell(2);
+        var m = row.insertCell(3);
+        var n = row.insertCell(4);
+        x.innerHTML = "<span style='background: "+item+"'><span>"
+        y.innerHTML = item
+        z.innerHTML = label.tem_1[i];
+        m.innerHTML = label.tem_2[i];
+        n.innerHTML = label.tem_3[i];
+    })
+
+    var speedTab = document.getElementById("speed");
+    colorList.speed.forEach(function (item,i) {
+       var row =  speedTab.insertRow(speedTab.rows.length)
+        var x = row.insertCell(0);
+        var y = row.insertCell(1);
+        var z = row.insertCell(2);
+        x.innerHTML = "<span style='background: "+item+"'><span>"
+        y.innerHTML = item
+        z.innerHTML = label.speed[i];
+    })
+
+    var humTab = document.getElementById("hum");
+    colorList.hum.forEach(function (item,i) {
+        var row =  humTab.insertRow(humTab.rows.length)
+        var x = row.insertCell(0);
+        var y = row.insertCell(1);
+        var z = row.insertCell(2);
+        x.innerHTML = "<span style='background: "+item+"'><span>"
+        y.innerHTML = item
+        z.innerHTML = label.hum[i];
+    })
+
+    var rgbToHex = (rgb) =>{ //rgb(r,g,b)
+        if(typeof rgb === 'string' && rgb.match(/rgb\(/)){
+            return '#'+rgb.replace(/rgb\(|\)/g,'').split(/\,/).reduce((a,b,index) =>
+                index === 1 ? componentToHex(+a) + componentToHex(+b) : a + componentToHex(+b)
+            )
+        }else {
+            return rgb
+        }
+    }
+    function componentToHex(c) {
+        let hex = c.toString(16);
+        return hex.length == 1 ? "0" + hex : hex;
+    }
+    var linearTab = document.getElementById("linear");
+    linearColors.forEach((item,i)=>{
+        var row =  linearTab.insertRow(linearTab.rows.length)
+        var x = row.insertCell(0);
+        var y = row.insertCell(1);
+
+        x.innerHTML =  "<span style='background:linear-gradient(to left,"+item.join(',')+")'></span>"
+        y.innerHTML =  item.map(v=>rgbToHex(v)).join(',')
+    })
+</script>
+</html>

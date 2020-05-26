@@ -97,6 +97,7 @@
 
     L.tileLayer('http://t1.tianditu.com/vec_c/wmts?layer=vec&style=default&tilematrixset=c&Service=WMTS&Request=GetTile&Version=1.0.0&Format=tiles&TileMatrix={z}&TileCol={x}&TileRow={y}&tk=a10b5d58603d9a7abfe4731e8360fa91"', {
         maxZoom: 20,
+        minZoom:3,
         tileSize: 256,
         zoomOffset: 1
     }).addTo(map);
